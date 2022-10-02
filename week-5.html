@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>RLB 🚀 PS70</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Class Progress</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="week-1.html">Week 1: Introduction/Final Project</a>
+                </li>
+                <li>
+                    <a href="week-2.html">Week 2: 2D-Design & Cutting</a>
+                </li>
+                <li>
+                    <a href="week-3.html">Week 3: Mechanical Design</a>
+                </li>
+                <li>
+                  <a href="week-4.html">Week 4: 3D Design & Printing</a>
+              </li>
+                <li>
+                  <a href="week-5.html">Week 5: Microcontroller Programming</a>
+              </li>
+              <li>
+                  <a href="week-6.html">Week 6: Electronic Input Devices</a>
+              </li>
+              <li>
+                  <a href="week-7.html">Week 7: CNC Milling, Molding & Casting</a>
+              </li>
+              <li>
+                <a href="week-8.html">Week 8: Electronic Output Devices</a>
+            </li>
+              <li>
+                <a href="week-9.html">Week 9: Radio, WiFi & Bluetooth</a>
+            </li>
+            <li>
+                <a href="week-10.html">Week 10: Machine Building & End Effectors</a>
+            </li>
+            <li>
+                <a href="week-11.html">Week 11: Computer Programming</a>
+            </li>
+            <li>
+              <a href="week-12.html">Week 12: Wildcard</a>
+          </li>
+	            </ul>
+	          </li>
+            <li>
+              <a href="index.html">Home</a>
+          </li>
+	          <li>
+	              <a href="about.html">About</a>
+	          </li>
+	        </ul>
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+    
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                  <i class="fa fa-bars"></i>
+                  <span class="sr-only">Toggle Menu</span>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="week-1.html">Final Project</a>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+
+        <h2 class="mb-4">Week 5: Microcontroller Programming</h2>
+        <div class="row">
+            <div class="col">
+                <h4>Programming LEDs in Sequence</h4>
+                <p>Having tinkered with Arduino - and some JavaScript - before, I was excited by the prospect of diving right
+                    into object-oriented programming and attempting to synchronize multiple elements within one board. When 
+                    working on the lab exercises, I conjured the idea of programming an Arduino "traffic light" with green, yellow,
+                    and red LEDs. My initial goal was to align the sequence of lights with the servo motor's speed, such that
+                    the motor would move fast during the green light, slow down during the yellow light, and stop during the red light.
+                </p>
+            </div>
+            <div class=col>
+                <img src="images/traffic_light.jpg" height="300px", width="auto">
+            </div>
+        </div> 
+        <br>
+        <h5>Initial LED Tests</h5>
+        <p>The lab materials were helpful in understanding how to sequence LED lights. Before reviewing
+            a tutorial, I was able to program the red, yellow, and green LEDs to blink in sequence.
+            However, since many of these examples used the delay() function, I wanted to try using millis()
+            and class constructors.   
+        <br>
+        <br>
+        <img src="images/video_2.gif" height="200px", width="200px">
+        <img src="images/video_3.gif" height="200px", width="200px">
+        <img src="images/video_1.gif" height="200px", width="200px">
+        <img src="images/video_4.gif" height="200px", width="200px">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h5>Learning the Logic</h5>
+                <p>As I searched for resources for how to time the LED and motor movement together,
+                I came across a tutorial that built out a traffic light example in C++ at several
+                levels of abstraction. Their process was similar to the examples from class, so I decided
+                to give it a go. I coded along with the instructor, who ultimately taught me 
+                how to use a button to initialize the traffic light. Their logic was similar to when a 
+                pedestrian presses the crosswalk button and the stop light slows down traffic so they can cross the street.
+
+                  <ul class="list-group">
+                    <li class="list-group-item disabled">Green LED is already on (base state).</li>
+                    <li class="list-group-item">User presses the button, inferring change.</li>
+                    <li class="list-group-item">Green LED turns off, yellow LED turns on (quickly).</li>
+                    <li class="list-group-item">Yellow LED turns off, red LED turns on (delayed).</li>
+                    <li class="list-group-item">Red LED turns off after delay, green LED turns on.</li>
+                  </ul>
+                </p>
+            </div>
+            <div class="col">
+                <img src="images/arduino_youtube.png" height="300px", width="auto">
+                <br>
+                <a href="https://www.youtube.com/watch?v=1phVBggIVoU" class="btn btn-primary">YouTube Reference 🚀</a>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h5>Arduino Schematic</h5>
+                <img src="images/arduino_schematic.png" height="300px", width="auto">
+            </div>
+            <div class="col">
+                <h5>Most Recent Demo</h5>
+                <img src="images/arduino_final_demo.gif" height="300px", width="auto">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h5>Setting the Timer</h5>
+                <p>The timer code initialized a timer when the button is pressed, employing
+                  variables that drive the LED light sequence.
+                </p>
+                <img src="images/timer-file.png" height="300px", width="500px">
+            </div>
+            <div class="col">
+                <h5>Setting the Button</h5>
+                <p>The button code established a button pullup that, once read, instigates
+                  the traffic light code.
+                </p>
+                <img src="images/button-file.png" height="300px", width="500px">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+              <h5>Adding the Motor?</h5>
+              <p>As previously mentioned, It was my initial goal this week to align the speed of a servo or DC motor with the button-LED interaction.
+                I troubleshot many different options, all of which disrupted the Green-Yellow-Red LED sequence.
+                With some more time, I think I could make it work for the "Timer.h" and "Button.h" code to also
+                correlate with the motor speed - to simplify things, I was thinking of just trying the <code>analogWrite()</code> function
+                to turn the motor on when the light was green and off when the light was red, rather than utilizing the <code>millis()</code> and <code>(for pos=0; pos <=180; pos+=1)</code> syntax we used for the servo motors in order to avoid using <code>delay()</code>. 
+                Although I had executed those examples successfully, I got a bit confused when it came to applying it all in a multi-tasking
+                program that involved buttons and light sequences. I hope to figure this out this week with some more help from the TFs.
+              </p>
+          </div>
+          <div class="col">
+              <h5></h5>
+              <img src="images/servo_motor.jpg" height="300px", width="500px">
+          </div>
+      </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h5>Main Arduino File</h5>
+        <pre><code>
+            #include "TrafficLight.h"
+            #include "Sweeper.h"
+            #include "Timer.h"
+            #include "Button.h"
+            
+            // determine LED data connections
+            int pinGreen = 11;
+            int pinYellow = 12;
+            int pinRed = 13;
+            
+            // determine button data input
+            int pinButton = 10;
+            
+            // create instance of the traffic light class
+            trafficLight trafficLight(pinGreen, pinYellow, pinRed);
+            
+            // create instance of the button class
+            Button button(pinButton);
+            
+            // create instance of the timer
+            Timer timer;
+            
+            void setup(){
+              // do not need
+            }
+            
+            void loop(){
+              // if in the middle of pressing the button
+              if (button.isPressed()){
+                // stop light sequence
+                trafficLight.stop();
+                // start timer
+                timer.startTimer(1000);
+              } else {
+                // if timer is ready
+                if (timer.isTimerReady()){
+                  // start sequence
+                  trafficLight.go();
+                }
+              }
+              // else, loop through the lights
+              trafficLight.loop();
+            }</code></pre>
+            </div>
+            <div class="col">
+                <h5>"TrafficLight.h" File</h5>
+                <pre><code>
+                    #ifndef _TRAFFIC_LIGHT_H
+                    #define _TRAFFIC_LIGHT_H
+                    
+                    #include "Timer.h"
+                    
+                    // write LED class to be used thre times
+                    class trafficLight {
+                    
+                      // define timer variables
+                      long timerGreen = 2000;
+                      long timerYellow = 1000;
+                      long timerRed = 2000;
+                    
+                      // define class variables
+                      int _greenLED;
+                      int _yellowLED;
+                      int _redLED;
+                    
+                      // define states
+                      enum State {
+                          GREEN,
+                          YELLOW,
+                          RED
+                      };
+                    
+                      // define initial states
+                      State _currentState = GREEN;
+                      State _targetState = GREEN;
+                      Timer timer;
+                    
+                      // constructor takes LEDs as parameters
+                      public:
+                        trafficLight (int greenLED, int yellowLED, int redLED){
+                          _greenLED = greenLED;
+                          _yellowLED = yellowLED;
+                          _redLED = redLED;
+                    
+                          // set LEDs as output
+                          pinMode(_greenLED, OUTPUT);
+                          pinMode(_yellowLED, OUTPUT);
+                          pinMode(_redLED, OUTPUT);
+                    
+                          // run the green function inside the object
+                          green();
+                        }
+                    
+                        // hitting go makes target state green
+                        void go() {
+                          _targetState = GREEN;
+                        }
+                    
+                        // hitting stop makes target state red
+                        void stop() {
+                          _targetState = RED; 
+                        }
+                    
+                        // if target state is green, loop through to make the LED green
+                        // if the target state is red,loop through to make the LED red
+                        void loop(){
+                          if (_targetState == GREEN){
+                            goToGreen();
+                          } else {
+                            goToRed();
+                          }
+                        }
+                    
+                      private:
+                       
+                        void goToGreen() {
+                    
+                          switch (_currentState){
+                    
+                            case RED:
+                              _currentState = GREEN;
+                              timer.startTimer(timerGreen);
+                              break;
+                    
+                            case GREEN:
+                              green();
+                              break;
+                          }
+                        } 
+                    
+                        void goToRed () {
+                    
+                          switch (_currentState){
+                    
+                            // move from green to yellow
+                            case GREEN:
+                              _currentState = YELLOW;
+                              timer.startTimer(timerYellow);
+                              break;
+                    
+                            // move from yellow to red
+                            case YELLOW:
+                              yellow();
+                              if (timer.isTimerReady()){
+                                _currentState = RED;            
+                              }
+                              break;
+                            
+                            // stop at red
+                            case RED:
+                              red();
+                              break;
+                          }
+                        } 
+                    
+                        // turn only yellow LED on
+                        void yellow(){
+                            digitalWrite(_greenLED, LOW);
+                            digitalWrite(_yellowLED, HIGH);
+                            digitalWrite(_redLED, LOW);
+                          }
+                    
+                        // turn only red LED on
+                        void red(){
+                          digitalWrite(_greenLED, LOW);
+                          digitalWrite(_yellowLED, LOW);
+                          digitalWrite(_redLED, HIGH);
+                        }
+                    
+                        // turn only green LED on
+                        void green(){
+                          digitalWrite(_greenLED, HIGH);
+                          digitalWrite(_yellowLED, LOW);
+                          digitalWrite(_redLED, LOW);
+                        }
+                    
+                    };  
+                    
+                    #endif // _TRAFFIC_LIGHT_H
+                    </code></pre>
+            </div>
+        </div>
+</div>
+
+	</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>ß
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
