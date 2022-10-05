@@ -9,6 +9,11 @@
 		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
   </head>
   <body>
 		
@@ -175,6 +180,34 @@
                 <p>The timer code initialized a timer when the button is pressed, employing
                   variables that drive the LED light sequence.
                 </p>
+                <pre><code class="language-arduino">
+                    #ifndef _TIMER_H_
+                    #define _TIMER_H_
+
+                    class Timer {
+
+                      // define timer start time and target time
+                      // use these values to intiate the loop
+                      long timerStart = 0;
+                      long timerTarget = 0;
+
+                      public:
+
+                        // function to begin the timer using millis()
+                        void startTimer(int msec) {
+                          timerStart = millis();
+                          timerTarget = msec;
+                        }
+
+                        // determine whether the timer is ready
+                        bool isTimerReady() {
+                          return (millis() - timerStart) > timerTarget;
+                        } 
+                      
+                    };
+
+                    #endif // _TIMER_H_
+                </code></pre>
                 <img src="images/timer-file.png" height="300px", width="500px">
             </div>
             <div class="col">
@@ -182,7 +215,33 @@
                 <p>The button code established a button pullup that, once read, instigates
                   the traffic light code.
                 </p>
-                <img src="images/button-file.png" height="300px", width="500px">
+                <pre><code class="language-arduino">
+                    #ifndef _BUTTON_H_
+                    #define _BUTTON_H_
+
+                    class Button {
+
+                      // set button pin variable
+                      int _buttonPin;
+
+                      public:
+
+                      // define button object
+                        Button(int buttonPin) {
+                          // set variable to button input
+                          _buttonPin = buttonPin;
+                          // set button as pullup
+                          pinMode(_buttonPin, INPUT_PULLUP);
+                        }
+
+                        // if button is pressed, read it
+                        bool isPressed() {
+                          return !digitalRead(_buttonPin);
+                        }
+                        
+                    };
+                    #endif // _BUTTON_H_
+                </code></pre>
             </div>
         </div>
         <br>
@@ -207,7 +266,7 @@
         <div class="row">
             <div class="col">
                 <h5>Main Arduino File</h5>
-        <pre><code>
+        <pre><code class="language-arduino">
             #include "TrafficLight.h"
             #include "Sweeper.h"
             #include "Timer.h"
@@ -254,7 +313,7 @@
             </div>
             <div class="col">
                 <h5>"TrafficLight.h" File</h5>
-                <pre><code>
+                <pre><code class="language-arduino">
                     #ifndef _TRAFFIC_LIGHT_H
                     #define _TRAFFIC_LIGHT_H
                     
