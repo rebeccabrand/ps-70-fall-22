@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>RLB 🚀 PS70</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Class Progress</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="week-1.html">Week 1: Introduction/Final Project</a>
+                </li>
+                <li>
+                    <a href="week-2.html">Week 2: 2D-Design & Cutting</a>
+                </li>
+                <li>
+                    <a href="week-3.html">Week 3: Mechanical Design</a>
+                </li>
+                <li>
+                  <a href="week-4.html">Week 4: 3D Design & Printing</a>
+              </li>
+                <li>
+                  <a href="week-5.html">Week 5: Microcontroller Programming</a>
+              </li>
+              <li>
+                  <a href="week-6.html">Week 6: Electronic Input Devices</a>
+              </li>
+              <li>
+                  <a href="week-7.html">Week 7: CNC Milling, Molding & Casting</a>
+              </li>
+              <li>
+                <a href="week-8.html">Week 8: Electronic Output Devices</a>
+            </li>
+              <li>
+                <a href="week-9.html">Week 9: Radio, WiFi & Bluetooth</a>
+            </li>
+            <li>
+                <a href="week-10.html">Week 10: Machine Building & End Effectors</a>
+            </li>
+            <li>
+                <a href="week-11.html">Week 11: Computer Programming</a>
+            </li>
+            <li>
+              <a href="week-12.html">Week 12: Wildcard</a>
+          </li>
+	            </ul>
+	          </li>
+            <li>
+              <a href="index.html">Home</a>
+          </li>
+	          <li>
+	              <a href="about.html">About</a>
+	          </li>
+	        </ul>
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+    
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                  <i class="fa fa-bars"></i>
+                  <span class="sr-only">Toggle Menu</span>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="week-1.html">Final Project</a>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+        <h2 class="mb-4">Week 6: Electronic Input Devices</h2>
+        <div class="row">
+            <div class="col">
+                <h4>Capacitive Sensing & Soil Moisture</h4>
+                <p>This week, Felicia and I both decided to apply the capacitive sensing examples from class to our shared inability to keep houseplants alive due to either
+                    over or under watering them. 
+                    Since we're also working on the final project together, and we're both interested in drawing connections between nature and technology,
+                    we thought it could be a fun and useful exercise to build our own soil moisture sensors and compare them with the soil moisture and water
+                    level sensors that the lab provided.
+                </p>
+            </div>
+            <div class=col>
+                <img src="images/plant_cartoon.jpeg" height="300px", width="auto">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h5>Homemade "Soil Moisture" Sensor</h5>
+                <p>The homemade "soil moisture" sensor employs the logic of the tx-rx measurement method from class. Basically, if the two prongs of an
+                    object are wrapped in capacitive material (in our case, a thin, adhesive film of copper), and the prongs are connected to ground and voltage
+                    respectively, we can measure the strength of the electric field between the two prongs/electrodes. Additionally, if these prongs are submerged
+                    in water - or better yet, soil saturated with water - we can explore how the soil's water saturation affects the capacity reading we get.
+                    This is why the homemade sensor roughly relates to soil moisture, and why it's compelling to compare it with off-the-shelf sensors.
+                    <br>
+                </p>
+            </div>
+            <div class="col">
+                <h5>Rough Experiment Design</h5>
+                <p>
+                    For each sensor type, we tried to collect the following measurements:
+                    <ul>
+                        <li><b>Air (Control):</b> Sensor reading in room environment</li>
+                        <li><b>In Water:</b> Sensor reading in cup of water</li>
+                        <li><b>Out of Water:</b> Sensor reading once it's taken out of the water</li>
+                        <li><b>Plant - Dry:</b> Sensor reading in dry plant</li>
+                        <li><b>Plant - Wet:</b> Sensor reading in watered plant (increased watering for some instances)</li>
+                      </ul>
+                </p>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h5>Red: Water Level Sensor</h5>
+                <p>In hindsight, using the water level sensor may not be a useful or compatible point of comparison for this exercise. I only discovered it measured water level
+                    as opposed to moisture upon building out this section of the website. Oops! However, we did use it, and I'll list our findings here.
+                </p>
+            </div>
+            <div class=col>
+                <img src="images/water_level_sensor.jpg" height="200x", width="auto">
+            </div> 
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h6>Arudino Code & Process</h6>
+                <pre><code>
+#define POWER_PIN  7
+#define SIGNAL_PIN A5
+                    
+int value = 0; // variable to store the sensor value
+                    
+void setup() {
+   Serial.begin(9600);
+   pinMode(POWER_PIN, OUTPUT);   // configure D7 pin as an OUTPUT
+   digitalWrite(POWER_PIN, LOW); // turn the sensor OFF
+}
+                    
+void loop() {
+   digitalWrite(POWER_PIN, HIGH);  // turn the sensor ON
+   delay(10);                      // wait 10 milliseconds
+   value = analogRead(SIGNAL_PIN); // read the analog value from sensor
+   digitalWrite(POWER_PIN, LOW);   // turn the sensor OFF
+                    
+   Serial.print("Sensor value: ");
+   Serial.println(value);
+                    
+   delay(1000);
+}                   
+                </code></pre>
+            </div>
+            <div class=col>
+                <img src="images/red_sensor_2.jpeg" height="300px", width="auto">
+                <img src="images/red_sensor.jpeg" height="300px", width="auto">
+            </div> 
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <img src="images/sensor_in_water.png" height="300px", width="auto">
+            </div>
+            <div class="col">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Experiement</th>
+                        <th scope="col">Capacitive Value (Arduino)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Exposed to air</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>Submerged in water</td>
+                        <td>117</td>
+                      </tr>
+                      <tr>
+                        <td>Taken out of water (not dried)</td>
+                        <td>33</td>
+                      </tr>
+                      <tr>
+                        <td>Taken out of water (dried)</td>
+                        <td>0</td>
+                      </tr>
+                      <tr>
+                        <td>Stuck in plant</td>
+                        <td>11</td>
+                      </tr> 
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h5>Homemade Soil Moisture Sensor</h5>
+                <p>After testing the water level sensor, we decided to try out both of our homemade soil moisture sensors. We
+                 both designed small, two-pronged objects using the calipers and proceeded to laser cut them onto 1/4" acrylic, then
+                 wrapped them in the copper film and used the alligator clips to attach them to power and ground using our microcontrollers
+                 and breadboards. We utilizes the example code from class, listed below. 
+                 <br>
+                 Our results were interesting in that the sensors "worked" but we noticed that their capacity might have a ceiling around 102,000, because
+                 it didn't make sense that the sensors being submerged in water and then being in the wet plant would have the same values.
+                </p>
+            </div>
+            <div class="col">
+                <img src="images/homemade_sensor_2.jpeg" height="200px", width="auto">
+                <img src="images/homemade_sensor.jpeg" height="200px", width="auto">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h6>Arudino Code & Process</h6>
+                        <pre><code> 
+    long result;   
+    int analog_pin = A3;
+    int tx_pin = 4;
+    
+    void setup() {
+        pinMode(tx_pin, OUTPUT);     
+        Serial.begin(9600);
+    }
+    
+    void loop() {
+        result = tx_rx();
+        Serial.println(result);
+    }
+    
+    
+    long tx_rx(){      
+
+      int read_high;
+      int read_low;
+      int diff;
+      long int sum;
+      int N_samples = 100;
+    
+      sum = 0;
+    
+      for (int i = 0; i < N_samples; i++){
+       digitalWrite(tx_pin,HIGH);              
+       read_high = analogRead(analog_pin);     
+       delayMicroseconds(100);                 
+       digitalWrite(tx_pin,LOW);               
+       read_low = analogRead(analog_pin);      
+       diff = read_high - read_low;            
+       sum += diff;                            
+     }
+      return sum;
+    }                                        
+            
+                </code></pre>
+            </div>
+            <div class=col>
+                <img src="images/both_sensors.jpeg" height="500px", width="auto">
+            </div> 
+        </div> 
+        <div class="row">
+            <div class="col">
+                <img src="images/10mm_in_plant.png" height="300px", width="auto">
+            </div>
+            <div class="col">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Experiement</th>
+                        <th scope="col">Capacitive Value (Arduino)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Exposed to air</td>
+                        <td>3,150</td>
+                      </tr>
+                      <tr>
+                        <td>Submerged in water</td>
+                        <td>102,300</td>
+                      </tr>
+                      <tr>
+                        <td>One sensor stuck in plant</td>
+                        <td>5,900</td>
+                      </tr>
+                      <tr>
+                        <td>Both sensors stuck in plant</td>
+                        <td>3,650</td>
+                      </tr>
+                      <tr>
+                        <td>10mm water added to plant</td>
+                        <td>102,200</td>
+                      </tr>
+                      <tr>
+                        <td>20mm water added to plant</td>
+                        <td>102,200</td>
+                      </tr> 
+                      <tr>
+                        <td>30mm water added to plant</td>
+                        <td>102,300</td>
+                      </tr>
+                      <tr>
+                        <td>60mm water added to plant</td>
+                        <td>101,200</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <br>  
+        <div class="row">
+            <div class="col">
+                <h5>Black: Soil Moisture Sensor</h5>
+                <p>Thankfully, we can confirm that this sensor was, in fact, meant to measure soil moisture. Because we tried this sensor
+                    after trying our homemade sensors, the plant's soil was already very wet. So we decided to just take the main three measurements.
+                    The downward slope from air, to plant, to water aligns with the assumption that the sensor value decreases as more moisture is detected.
+                </p>
+            </div>
+            <div class=col>
+                <img src="images/soil_sensor.jpeg" height="200px", width="auto">
+                <img src="images/soil_moisture_sensor.jpg" height="200px", width="auto">
+            </div> 
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <h6>Arudino Code & Process</h6>
+                <pre><code>
+int sensorPin = A0; 
+int sensorValue;  
+int limit = 300; 
+                    
+void setup() {
+    Serial.begin(9600);
+    pinMode(13, OUTPUT);
+}
+                    
+void loop() {
+                    
+    sensorValue = analogRead(sensorPin); 
+    Serial.println("Analog Value : ");
+    Serial.println(sensorValue);
+                     
+    if (sensorValue < limit) {
+        digitalWrite(13, HIGH); 
+    }
+    else {
+        digitalWrite(13, LOW); 
+    }
+                     
+    delay(1000); 
+}
+                                     
+                </code></pre>
+            </div>
+            <div class=col>
+                <img src="images/black-sensor-drip.gif" height="400px", width="auto">
+                <br>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Experiement</th>
+                        <th scope="col">Capacitive Value (Arduino)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Exposed to air</td>
+                        <td>663</td>
+                      </tr>
+                      <tr>
+                        <td>Submerged in water</td>
+                        <td>273</td>
+                      </tr>
+                        <td>Stuck in plant</td>
+                        <td>574</td>
+                      </tr> 
+                    </tbody>
+                  </table>
+            </div> 
+        </div>
+        <br>
+    <div class="row">
+        <div class="col">
+            <h5>Experiment Takeaways (?)</h5>
+            <p>My primary takeaway from this exercise is that there's a lot you can do with sensors in regard to the natural world. It's also important to
+                note that different sensors use different capacitive values in Arduino, which theoretically you could calibrate/standardize across different sensor types.
+                However, I don't think we designed this experiment as thoughtfully as we should have. This was partially because we did not
+                know the origin or use case of all the sensors we found in the lab, instead using them in a trial & error capacity. I think this was fine
+                for the purpose of this week's assignment, but we need to be careful and precise for future sensor-based prototypes.
+            </p>
+        </div>
+        <div class="col">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Sensor</th>
+                    <th scope="col">Air (no water)</th>
+                    <th scope="col">Soil+Water (some water)</th>
+                    <th scope="col">Water (most water)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="col">Red (water level)</th>
+                    <td>0</td>
+                    <td>11</td>
+                    <td>117</td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Black (soil moisture)</th>
+                    <td>663</td>
+                    <td>574</td>
+                    <td>273</td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Homemade (capacitive)</th>
+                    <td>5900</td>
+                    <td>3150</td>
+                    <td>102300</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="row">
+            <div class="col">
+                <img src="images/line_chart.png" height="250px", width="auto">
+            </div>
+            <div class="col">
+                <img src="images/bar_chart.png" height="250px", width="auto">
+            </div>
+    </div>
+    </div>
+    <br>
+    <h5>Sensor Schematics</h5>
+    <br>
+    <div class="row">
+        <div class=col>
+            <img src="images/red_schematic.png" height="250px", width="auto">
+            <p><b>I couldn't find the water level sensor in TinkerCAD, but I found this example circuit online.</b></p>
+        </div>
+        <div class=col>
+            <img src="images/black-sensor-schematic.png" height="250px", width="auto">
+            <p><b>This one was doable online!</b></p>
+        </div>
+        <div class=col>
+            <img src="images/homemade-schematic.jpg" height="250px", width="auto">
+            <p><b>I tried to adapt the tx-rx schematic from the website here.</b></p>
+        </div>
+    </div>
+    <h5>Photoresistor Tutorial</h5>
+</div>
+
+	</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>ß
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
