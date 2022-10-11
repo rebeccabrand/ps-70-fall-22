@@ -488,10 +488,56 @@ void loop() {
             <p><b>I tried to adapt the tx-rx schematic from the website here.</b></p>
         </div>
     </div>
-    <h5>Photoresistor Tutorial</h5>
+<br>   
+<div class="row">
+      <div class="col">
+          <h5>Photoresistor Tutorial</h5>
+          <p>Ever the curious and unsatisfied overachiever, I wanted to try out a different electronic input device. I found a tutorial
+            for connecting a photoresistor (which senses more/less light) to an LED. As the photoresistor reads less light, it triggers
+            the LED to turn on. As the photoresistor reads more light, the LED turns off. The code shows that the light threshhold sits at 
+            a value of larger or smaller than 300. 
+          </p>
+      </div>
+      <div class=col>
+          <img src="images/photoresistor_led.gif" height="400px", width="auto">
+      </div> 
+  </div>
+  <div>
+    <h6>Arudino Code & Process</h6>
+                <pre><code>
+// determine pin numbers
+int ledPin = 13; // LED pin
+int photoPin = A0; // photoresistor pin
+                  
+                  
+void setup() {
+                  
+  Serial.begin(9600);
+  pinMode(ledPin, OUTPUT); // LED will be output
+  pinMode(photoPin, INPUT); // photoresistor will be input
+                  
+}
+                  
+void loop() {
+                    
+  int photoStatus = analogRead(photoPin); // read the status of the photoresistor
+                  
+  // check if the photoresistor status is less than 300
+  // if it is, the LED is HIGH
+                  
+  if (photoStatus < = 300){
+    digitalWrite(ledPin, HIGH);
+    Serial.println("Photoresistor is dark, LED is on.");
+  }
+                  
+  else {
+    digitalWrite(ledPin, LOW);
+    Serial.println("......");
+  }
+}                                 
+                </code></pre>
+  </div>
 </div>
-
-	</div>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>ß
     <script src="js/bootstrap.min.js"></script>
