@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>RLB 🚀 PS70</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Class Progress</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="week-1.html">Week 1: Introduction/Final Project</a>
+                </li>
+                <li>
+                    <a href="week-2.html">Week 2: 2D-Design & Cutting</a>
+                </li>
+                <li>
+                    <a href="week-3.html">Week 3: Mechanical Design</a>
+                </li>
+                <li>
+                  <a href="week-4.html">Week 4: 3D Design & Printing</a>
+              </li>
+                <li>
+                  <a href="week-5.html">Week 5: Microcontroller Programming</a>
+              </li>
+              <li>
+                  <a href="week-6.html">Week 6: Electronic Input Devices</a>
+              </li>
+              <li>
+                  <a href="week-7.html">Week 7: CNC Milling, Molding & Casting</a>
+              </li>
+              <li>
+                <a href="week-8.html">Week 8: Electronic Output Devices</a>
+            </li>
+              <li>
+                <a href="week-9.html">Week 9: Radio, WiFi & Bluetooth</a>
+            </li>
+            <li>
+                <a href="week-10.html">Week 10: Machine Building & End Effectors</a>
+            </li>
+            <li>
+                <a href="week-11.html">Week 11: Computer Programming</a>
+            </li>
+            <li>
+              <a href="week-12.html">Week 12: Wildcard</a>
+          </li>
+	            </ul>
+	          </li>
+            <li>
+              <a href="index.html">Home</a>
+          </li>
+	          <li>
+	              <a href="about.html">About</a>
+	          </li>
+	        </ul>
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+    
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                  <i class="fa fa-bars"></i>
+                  <span class="sr-only">Toggle Menu</span>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="week-1.html">Final Project</a>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+        <h2 class="mb-4">Week 7: Electronic Output Devices</h2>
+        <div class="row">
+            <div class="col">
+                <h4>From LEDs to LCDs</h4>
+                <p>Before deciding on my personal task for the week, I wanted to try out the LED strip and singular RGB LED. For both options, the
+                  example code was very straightforward. I used the four-legged RGB LED, in which each channel shares
+                  a common cathode that connected to ground. I set up the circuit with 1K ohm resistors for the red, green, and blue channels.
+
+                  I also hadn't used an LCD screen yet, so I adjusted code to print a "hello, world" example. I used a potentiometer to
+                  adjust the brightness of the screen. Since these were simple exercises, I didn't focus on removing the delay function from the code structure.
+                  However, the LCD code utilizes millis() to print the amount of time that has passed since the screen was initialized.
+                </p>
+            </div>
+            <div class=col>
+                <img src="images/rgb_led.gif" height="200px", width="auto">
+                <br>
+                <img src="images/hello_world.gif" height="200px", width="auto">
+            </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <h6>RBG LED Arduino Code</h6>
+            <pre><code>
+void setup() {
+  pinMode(9, OUTPUT);   // red
+  pinMode(10, OUTPUT);  // green
+  pinMode(11, OUTPUT);  // blue  
+}
+              
+oid loop() {
+  digitalWrite(9, HIGH);   // turn on red channel
+  delay(500);              // delay 
+  digitalWrite(10, HIGH);  // turn on green channel
+  delay(500);              // delay
+  digitalWrite(11, HIGH);  // turn on green channel
+  delay(500);              // delay
+  digitalWrite(9, LOW);    // turn off red channel
+  digitalWrite(10, LOW);   // turn off green channel
+  digitalWrite(11, LOW);   // turn off blue channel
+  delay(3000);             // delay
+}
+            </code></pre>
+          </div>
+          <div class="col">
+            <h6>LCD Screen Code</h6>
+            <pre><code>
+// include the library code:
+#include < LiquidCrystal.h >
+
+// initialize the library by associating any needed LCD interface pin
+// with the arduino pin number it is connected to
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
+void setup() {
+  // set up the LCD's number of columns and rows:
+  lcd.begin(16, 2);
+  // Print a message to the LCD.
+  lcd.print("hello, world!");
+}
+
+void loop() {
+  // set the cursor to column 0, line 1
+  // (note: line 1 is the second row, since counting begins with 0):
+  lcd.setCursor(0, 1);
+  // print the number of seconds since reset:
+  lcd.print(millis() / 1000);
+}
+            </code></pre>
+          </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <h4>Taking the Temperature (Thermistor)</h4>
+          <p>Felicia and I are planning to make a drawing/painting machine for our final project, so we've been brainstorming
+            what input devices we will use to control the speed, direction, and intensity of the machine's gesture. Since we're
+            interested in climate change and leveraging climate data to inspire action through participatory art, I thought I would
+            try to use the thermistor and export its measurements onto an LCD screen. 
+            <br>
+            <br>
+            How does a thermistor work? It records temperature by a change in electrical resistance, since
+            the analog pin of an Arduino can only measure voltage directly. A voltage divider is typically used to calculate resistance
+            and convert it to apparent temeprature - this is done by taking a measurement between the thermistor and a knwon resistor. As such, you will see that the code block uses 
+            multiple equations to calculate the temperature in both Celsius and Fahrenheit.
+          </p>
+        </div>
+        <div class="col">
+          <img src="images/thermistor_example.png" height="300px", width="auto">
+          <br>
+          <p><b>Voltage divider equation (gets thermistor resistance)</b></p>
+          <img src="images/voltage_divider_equation.png" height="100px", width="auto">
+          <p><b>Steinhart–Hart equation (calculates temperature)</b></p>
+          <img src="images/steinhart_hart_eq.gif" height="50px", width="auto">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <h4>Input > Output Tests</h4>
+          <p>Before connecting to the LCD screen, I tested the thermistor on its own. Nathan
+            provided me with a 10K ohm thermistor, which then requires using a 10K ohm resistor. 
+            When I was using an older thermistor, it wasn't obvious what its resistance was. It
+            was interesting to see how using resistors of differing strengths increased or decreased
+            the output temperature readings by magnitudes of 10 to 100.
+
+            Once I got access to a new thermistor and the LCD screen, I read up on how the LCD screen actually
+            works. I used a 16x2 LCD (liquid crystal display), which requires an additional Arduino library. 
+            Among the 16 pins, these are most important: 
+            <ul>
+              <li>A register select (RS) pin that selects the LCD's memory,</li>
+              <li>A read/write (RW) pin that selects read or write mode,</li>
+              <li>8 data pins (D0-D7) and high/low states that inform the read/write</li>
+            </ul>
+          </p>
+        </div>
+        <div class="col">
+          <img src="images/thermistor_small.jpeg" height="300px", width="auto">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <img src="images/thermistor_high.jpeg" height="300px", width="auto">
+          <p><b>It certainly isn't 200.75 degrees F in the Science Center!</b></p>
+        </div>
+        <div class="col">
+          <img src="images/thermistor_correct.gif" height="200px", width="auto">
+          <p><b>Heating up from my body temperature.</b></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <img src="images/oscillometer.gif" height="auto", width="300px">
+        </div>
+        <div class="col">
+          <img src="images/lcd-schematic.png" height="300px", width="auto">
+        </div>
+      </div>
+        <p>
+          I also 3D-printed a syringe pump with a DC motor attachment. Later this weekend, I plan to test whether I can map temperature to the speed of 
+            the motor, ultimately controlling the speed of the liquid released from the syringe. Since we're curious to use ink for our drawing machine,
+            I thought this could be a useful experiment for the final project.
+        </p>
+      </div>
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>ß
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
