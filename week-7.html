@@ -44,10 +44,10 @@
                   <a href="week-6.html">Week 6: Electronic Input Devices</a>
               </li>
               <li>
-                  <a href="week-7.html">Week 7: CNC Milling, Molding & Casting</a>
+                  <a href="week-7.html">Week 7: Electronic Output Devices</a>
               </li>
               <li>
-                <a href="week-8.html">Week 8: Electronic Output Devices</a>
+                <a href="week-8.html">Week 8: CNC Milling, Molding & Casting</a>
             </li>
               <li>
                 <a href="week-9.html">Week 9: Radio, WiFi & Bluetooth</a>
@@ -123,7 +123,7 @@
             <div class=col>
                 <img src="images/rgb_led.gif" height="200px", width="auto">
                 <br>
-                <img src="images/hello_world.gif" height="200px", width="auto">
+                <img src="images/led_screen.gif" height="200px", width="auto">
             </div>
         </div>
         <br>
@@ -234,24 +234,148 @@ void loop() {
           <p><b>It certainly isn't 200.75 degrees F in the Science Center!</b></p>
         </div>
         <div class="col">
-          <img src="images/thermistor_correct.gif" height="200px", width="auto">
+          <img src="images/thermistor_correct.gif" height="300px", width="auto">
           <p><b>Heating up from my body temperature.</b></p>
         </div>
       </div>
+      <br>
       <div class="row">
         <div class="col">
-          <img src="images/oscillometer.gif" height="auto", width="300px">
-        </div>
-        <div class="col">
+          <h4>Oscilloscope Trial & Error</h4>
+          <p>
+            Although I used the oscilloscope with my thermistor-LCD circuit setup, I'm not sure that I got it to work correctly. As a lab class, we were having some issues getting a clear reading from any circuit. 
+            For my particular case, I attached the ground probe to my ground wire and the power probe to my data pin for the thermistor. I had trouble adjusting the scale
+            to get a clear reading, but decided to record this zoom level and report my findings, even if they're incorrect. 
+            What you see here is a reading at less than 10Hz frequency, the CH1 reads 200mV, which I believe is volt per division, 336mV is the trigger level, and either 4.00ms or 0.00000s is the time per division.
+            It is my hypothesis that the frequency changes are very small because the thermistor is constantly reading voltage, as opposed to, say, using a
+            blinking LED and watching it transition from OV to 5V at the prescribed delay intervals.
           <img src="images/lcd-schematic.png" height="300px", width="auto">
         </div>
+      <div class="col">
+        <img src="images/oscillometer.gif" height="400", width="auto">
+        <img src="images/oscilloscope.jpeg" height="400", width="auto">
       </div>
-        <p>
-          I also 3D-printed a syringe pump with a DC motor attachment. Later this weekend, I plan to test whether I can map temperature to the speed of 
-            the motor, ultimately controlling the speed of the liquid released from the syringe. Since we're curious to use ink for our drawing machine,
-            I thought this could be a useful experiment for the final project.
-        </p>
-      </div>
+   </div>
+   <div class="row">
+    <div class="col">
+      <h6>Main Arduino File</h6>
+      <p>I tried adjusting the code from the tutorial I found online to include class constructors and a timer rather than the delay function.
+        Since Liquid Crysal is already a class, I included a new class for the Thermistor and a new class for the timer.
+      </p>
+      <pre><code>
+        #include <LiquidCrystal.h>
+          #include 'Thermistor.h'
+          #include 'Timer.h'
+          
+          // initialize the library with the numbers of the interface pins
+          LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+          
+          // create instance of thermistor
+          int thermistorPin = 0;
+          Thermistor Thermistor(thermistorPin);
+          
+          Timer Timer();
+          
+          void setup() {
+            // do not need this when we use the class constructors
+          }
+          
+          void loop() {
+          
+            // start timer
+            timer.startTimer(1000);
+          
+            // when timer is ready
+            if (timer.isTimerReady(){
+          
+              // start thermistor reading
+              Thermistor.recordTemp();
+          
+              // transfer thermistor reading to LCD screen
+              lcd.print("Temperature: ");
+              lcd.setCursor(0,1);
+              lcd.print(Tc);
+              lcd.print("C  ");
+              lcd.print(Tf);
+              lcd.print("F  "); 
+            }) 
+          
+          };
+          
+      </code></pre>
+    </div>
+    <div class="col">
+      <h6>Thermistor Class</h6>
+      <pre><code>
+        #ifndef _THERMISTOR_H_
+#define _THERMISTOR_H_
+
+// initiate the class
+class Thermistor {
+
+  // define variables to be used
+  int Vo;
+  float R1 = 1000;   // Resistor Value (We use 1 KOhms Resistor)
+  float logR2, R2, T, Tc, Tf;
+  float A = 1.009249522e-03, B = 2.378405444e-04, C = 2.019202697e-07; 
+
+
+  public:
+    // create instance of the thermistor object
+    Thermistor(int thermistorPin){
+
+      thermistorPin = thermistorPin;
+
+    }
+    // initiate a constructor with variable parameters
+    void recordTemp(Vo, R1, logR2, R2, T, Tc, Tf){
+
+      Vo = analogRead(thermistorPin);
+      R2 = R1 * (1023.0 / (float)Vo - 1.0);
+      logR2 = log(R2);
+      T = (1.0 / (A + B*logR2 + C*logR2*logR2*logR2));
+      Tc = T - 273.15;
+      Tf = (Tc * 9.0)/ 5.0 + 32.0; 
+      return Tc, TF;
+
+    }
+    
+};
+#endif // _THERMISTOR_H_
+      </code></pre>
+    </div>
+   </div>
+   <div class="row">
+    <h6>Timer Class</h6>
+    <pre><code>
+      #ifndef _TIMER_H_
+#define _TIMER_H_
+
+class Timer {
+
+// define timer start time and target time
+// use these values to intiate the loop
+  long timerStart = 0;
+  long timerTarget = 0;
+
+  public:
+
+    // function to begin the timer using millis()
+    void startTimer(int msec) {
+      timerStart = millis();
+      timerTarget = msec;
+    }
+
+    // determine whether the timer is ready
+    bool isTimerReady() {
+      return (millis() - timerStart) > timerTarget;
+    } 
+                      
+};
+
+#endif // _TIMER_H_
+    </code></pre>
+   </div>
 </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>ß
