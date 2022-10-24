@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>RLB 🚀 PS70</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Class Progress</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="week-1.html">Week 1: Introduction/Final Project</a>
+                </li>
+                <li>
+                    <a href="week-2.html">Week 2: 2D-Design & Cutting</a>
+                </li>
+                <li>
+                    <a href="week-3.html">Week 3: Mechanical Design</a>
+                </li>
+                <li>
+                  <a href="week-4.html">Week 4: 3D Design & Printing</a>
+              </li>
+                <li>
+                  <a href="week-5.html">Week 5: Microcontroller Programming</a>
+              </li>
+              <li>
+                  <a href="week-6.html">Week 6: Electronic Input Devices</a>
+              </li>
+              <li>
+                  <a href="week-7.html">Week 7: Electronic Output Devices</a>
+              </li>
+              <li>
+                <a href="week-8.html">Week 8: CNC Milling, Molding & Casting</a>
+            </li>
+              <li>
+                <a href="week-9.html">Week 9: Radio, WiFi & Bluetooth</a>
+            </li>
+            <li>
+                <a href="week-10.html">Week 10: Machine Building & End Effectors</a>
+            </li>
+            <li>
+                <a href="week-11.html">Week 11: Computer Programming</a>
+            </li>
+            <li>
+              <a href="week-12.html">Week 12: Wildcard</a>
+          </li>
+	            </ul>
+	          </li>
+            <li>
+              <a href="index.html">Home</a>
+          </li>
+	          <li>
+	              <a href="about.html">About</a>
+	          </li>
+	        </ul>
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+    
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                  <i class="fa fa-bars"></i>
+                  <span class="sr-only">Toggle Menu</span>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="week-1.html">Final Project</a>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+        <h2 class="mb-4">Week 8: CNC Milling, Molding & Casting</h2>
+        <div class="row">
+            <div class="col">
+                <h4>Milling Topography in Wood</h4>
+                <p>I prepared 2 files last week with the objectives of practicing milling wood on the ShopBot and practicing milling wax on the SRM machine.
+                  First, I knew I wanted to mill a topographic map of Mount Kenya for a friend, so I researched tutorials for translating a digital elevation model (DEM)
+                  to an STL file that would be compatible with the CNC machines at our disposal.
+                  <br>
+                  <br>
+                  I discovered a website called Terrain2STL that allows you to input latitude and longitude coordinates and export an STL model of your chosen terrain. Amazing!
+                  Then, I found a tutorial on how to clean the terrain STL in blender and finalize the geometry in Fusion360. I've embedded screenshots of my process below.
+                </p>
+            </div>
+            <br>
+            <div class=col>
+              <img src="images/mount_kenya_image.png" height="300", width="auto">
+              <p><b>Mount Kenya, elevation: 17,057 feet!</b></p>
+            </div>
+        </div>
+        <h5>Inspiration Images</h5>
+        <div class="row">
+            <img src="images/cnc_topo.jpg" height="200", width="auto">
+            <img src="images/cnc_topo_2.jpg" height="200", width="auto">
+            <img src="images/cnc_topo_3.jpg" height="200", width="auto">
+            <img src="images/cnc_topo_4.jpg" height="200", width="auto">
+        </div>
+        <br>
+        <h5>Process Images</h5>
+        <div class="row">
+          <div class="col">
+            <img src="images/terrain-process-1.png" height="300", width="500">
+            <p><b>Using Google Earth to grab the exact coordinates of Mount Kenya.</b></p>
+          </div>
+          <div class="col">
+            <img src="images/terrain-process-2.png" height="300", width="500">
+            <p><b>Bringing the coordinates into Terrain2STL and adjusting frame.</b></p>
+          </div>
+          <div class="col"></div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <img src="images/terrain-process-3.png" height="300", width="500">
+            <p><b>Editing STL in Blender, changing triangle mesh to quad mesh.</b></p>
+          </div>
+          <div class="col">
+            <img src="images/terrain-process-4.png" height="300", width="500">
+            <p><b>Defining height of the block in Fusion360 and prepping it for export.</b></p>
+          </div>
+          <div class="col"></div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <h5>Getting the Material Ready</h5>
+            <p>Although I had only practiced using the ShopBot with the OSB, I didn't want to use that material for my design. In addition, the process of milling the topography would
+              inevitably be more complex than the simple example we were given in class. Ibrahim had suggested I use 2 pieces of plywood glued togethger to give the elevation more depth. 
+              I attached the pieces I found with wood glue and clamped them to a table in SC102 overnight. On Tuesday, Ibrahim helped me set up the file for the ShopBot.
+              The tutorial I found had suggested I prep the file in Fusion360 for milling, but we used Aspire instead.
+              <br>
+              <br>
+              Include details on the cutting process here.
+            </p>
+          </div>
+          <div class="col">
+            <img src="images/cnc_mill_1.jpeg" height="400", width="400">
+            <p><b>My first run on the ShopBot, practicing full cuts and pocket cuts.</b></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h4>Milling the Mountain</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h4>Wax and its Discontents</h4>
+            <p>I will preface this section with the fact that I had a bunch of trouble with the SRM machine; Kassia was really gracious and helpful with troubleshooting,
+              but when we finally got my milling job to work, the outcome was pretty mediocre. My initial idea was to mill a wax mold of mushrooms of different sizes. I wanted to use that mold to 
+              create a food-safe silicone mold in which I would cast mushrooms out of chocolate, or even better, truffle butter. 
+              
+              Initially, I thought I would just do a 2.5D profile of my mushrooms, so I prepped my Fusion360 file to reflect that direction (3 mushrooms flattened within a box). However, I followed Ibrahim's suggestion during lab to include small 
+              columns for each mushroom: one would become the channel for the silicone solution, and one channel would be for air to escape the mold as to avoid air bubbles. Then, I made 2 versions of my file with pegs and holes
+              that could theoretically lock together, making a fully 3D mold that would round out the mushroom shape. On to milling!
+            </p>
+          </div>
+        </div>
+          <div class="col">
+        <div class="row">
+          <div class="col">
+            <iframe src="https://mymde73.autodesk360.com/shares/public/SH9285eQTcf875d3c539aae02dd6bd69cca6?mode=embed" width="420" height="380" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+            <p><b>One side of the mushroom mold.</b></p>
+          </div>
+          <div class="col">
+            <iframe src="https://mymde73.autodesk360.com/shares/public/SH9285eQTcf875d3c5390cb93f95bac03b23?mode=embed" width="420" height="380" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"  frameborder="0"></iframe>
+            <p><b>The other side of the mushroom mold (see different peg/hole orientation).</b></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5>Troubleshooting with SRM-20</h5>
+            <p>I thought I had been oh so proactive by trying to mill my mold on Friday afternoon, but ended up encountering very many struggles with the machine.
+              First, I did a rough pass using the 2.5D STL settings, which the website suggested. This came out okay, but the print probably took
+              a full 1/1.5 hour(s) and created a comically large amount of wax dust inside the machine. I noticed that the rought cut didn't make a dent in my smallest mushroom or the columns below, which I attribute to using too large of a drill bit (1/8 inch). However,
+              I wanted to see the whole print through and decided to set up the finishing pass.
+            </p>
+          </div>
+          <div class="col">
+            <img src="images/wax-1.jpeg" height="auto", width="200">
+            <img src="images/wax-2.jpeg" height="auto", width="200">
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <h5>Epic Fail</h5>
+            <p>For the finishing pass, I swapped the drill bit for 1/16 inch and adjusted the workflow for the 3D STL. Kassia and I encountered an error where
+              the milling job would just fail within the first 10 seconds of the print, which we fixed by adjusting the Z-height of the bit higher. The rest 
+              of the print went fine; however, when I went to get my block from the interior space, it wasn't totally refined and a bunch of wax dust was caked to the bottom.
+              No one knew how this had happened, and because the jobs had taken so long, I walked away from the SRM-20 both defeated and galvanized to pursue another option. Overall, I think it would have been much easier to cut something with a 2D profile (like the cartoon example) rather than something with smooth, curved geometry.
+              It's my hunch that there wa tension between the level of shape fidelity and what the machine was capable of doing with the settings I had.
+          </div>
+          <div class="col">
+            <img src="images/mushroom-fail.jpeg" height="auto", width="200">
+            <img src="images/mushroom-fail-2.jpeg" height="auto", width="200">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h5>Pivoting to a 3D-printed mold</h5>
+            <p>Luckily enough, I had 2 ready-to-print STL files. I set them up on the Prusa and let them print overnight. I made a couple slight adjustments to
+              the design that I hadn't done for the wax process, so there was a silver lining to all of this.
+            </p>
+          </div>
+          <div class="col">
+            <img src="images/mushroom-3d-print-1.jpeg" height="auto", width="200">
+            <img src="images/mushroom-3d-print-2.jpeg" height="auto", width="200">
+          </div>
+        </div>
+    <div class="row">
+      <div class="col">
+        <h4>Molding & Casting Mushrooms</h4>
+      </div>
+      <div class="col">
+        
+      </div>
+    </div>    
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
