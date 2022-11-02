@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>RLB 🚀 PS70</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/arduino-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/arduino.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> 
+  </head>
+  <body>
+		
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="p-4 pt-5">
+		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Class Progress</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a href="week-1.html">Week 1: Introduction/Final Project</a>
+                </li>
+                <li>
+                    <a href="week-2.html">Week 2: 2D-Design & Cutting</a>
+                </li>
+                <li>
+                    <a href="week-3.html">Week 3: Mechanical Design</a>
+                </li>
+                <li>
+                  <a href="week-4.html">Week 4: 3D Design & Printing</a>
+              </li>
+                <li>
+                  <a href="week-5.html">Week 5: Microcontroller Programming</a>
+              </li>
+              <li>
+                  <a href="week-6.html">Week 6: Electronic Input Devices</a>
+              </li>
+              <li>
+                  <a href="week-7.html">Week 7: Electronic Output Devices</a>
+              </li>
+              <li>
+                <a href="week-8.html">Week 8: CNC Milling, Molding & Casting</a>
+            </li>
+              <li>
+                <a href="week-9.html">Week 9: Radio, WiFi & Bluetooth</a>
+            </li>
+            <li>
+                <a href="week-10.html">Week 10: Machine Building & End Effectors</a>
+            </li>
+            <li>
+                <a href="week-11.html">Week 11: Computer Programming</a>
+            </li>
+            <li>
+              <a href="week-12.html">Week 12: Wildcard</a>
+          </li>
+	            </ul>
+	          </li>
+            <li>
+              <a href="index.html">Home</a>
+          </li>
+	          <li>
+	              <a href="about.html">About</a>
+	          </li>
+	        </ul>
+
+	        <div class="footer">
+	        	<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+	        </div>
+
+	      </div>
+    	</nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <div class="container-fluid">
+    
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                  <i class="fa fa-bars"></i>
+                  <span class="sr-only">Toggle Menu</span>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="week-1.html">Final Project</a>
+                  </ul>
+                </div>
+              </div>
+            </nav>
+        <h2 class="mb-4">Week 9: Radio, WiFi & Bluetooth (IoT)</h2>
+        <p>This week's assignment was to program a microcontroller to obtain and respond to information from the internet/radio, with at least one input and output.
+          I collaborated with Felicia Liang this week to tackle the idiosyncracies of Arduino in support of a major step of our final project.
+
+        </p>
+        <div class="row">
+            <div class="col">
+                <h4>Simple WiFi Server with ESP32</h4>
+                <p>We started by setting up a <a href="https://nathanmelenbrink.github.io/lab/networking/huzzah1.html">WiFi Server</a> so we could control our ESP32 board over WiFi connection.
+                  We set it up so that we were able to turn an LED on/off by clicking on the links in our browser.
+                </p>
+            </div>
+            <div class="col">
+              <img src="images/simplewifi.png" height="100", width="auto">
+            </div>
+        </div>
+        <h4>Firebase + ESP32 + LED</h4>
+        <p>Then, we followed <a href="https://nathanmelenbrink.github.io/lab/networking/huzzah1b.html">this tutorial</a> to control an LED through a Firebase Server.</p>
+        <div class="row">
+          <div class="col">
+            <video width="500" controls>
+              <source src="images/LED_firebase.mp4" type="video/mp4">
+            </video>
+            <figcaption>TURN LED ON/OFF BY SETTING VALUE OF STRING TO "ON" OR "OFF" IN FIREBASE REALTIME DATABASE.</figcaption>
+          </div>
+          <div class="col">
+            <video width="500" controls>
+              <source src="images/LED_UI.mp4" type="video/mp4">
+            </video>
+            <figcaption>TURN LED ON/OFF BY CLICKING THE "TURN ON" OR "TURN OFF" BUTTON.</figcaption>
+          </div>
+        </div>
+        <br>
+        <h4>ESP32 + Stepper Motor</h4> 
+        <div class="row">
+          <div class="col">
+            For our final project, we want to create a drawing machine that injects ink into water based on certain inputs. To start on the prototype, we 3D printed a syringe holder that is attached to a stepper motor. When the stepper motor runs, the holder depresses the plunger.
+
+            We followed <a href="https://randomnerdtutorials.com/esp32-stepper-motor-28byj-48-uln2003/">this tutorial</a> to connect the stepper motor to the ESP32 via an ULN2003 motor driver and powered it with an Arduino Uno that was connected to our laptop.
+          </div>
+          <div class="col">
+            <img src="images/stepper_schematic.png" height="250", width="auto">
+          </div>
+        </div>
+        <h5>Arduino Code</h5>
+        <pre><code class="language-arduino hljs">
+          /*
+          Rui Santos
+          Complete project details at https://RandomNerdTutorials.com/esp32-stepper-motor-28byj-48-uln2003/
+          
+          Permission is hereby granted, free of charge, to any person obtaining a copy
+          of this software and associated documentation files.
+          
+          The above copyright notice and this permission notice shall be included in all
+          copies or substantial portions of the Software.
+          
+          Based on Stepper Motor Control - one revolution by Tom Igoe
+        */
+        
+        #include "Stepper.h"
+        
+        const int stepsPerRevolution = 2048;  // change this to fit the number of steps per revolution
+        
+        // ULN2003 Motor Driver Pins
+        #define IN1 19
+        #define IN2 18
+        #define IN3 10
+        #define IN4 4
+        
+        // initialize the stepper library
+        Stepper myStepper(stepsPerRevolution, IN1, IN3, IN2, IN4);
+        
+        void setup() {
+          // set the speed at 5 rpm
+          myStepper.setSpeed(5);
+          // initialize the serial port
+          Serial.begin(115200);
+        }
+        
+        void loop() {
+          // step one revolution in one direction:
+          Serial.println("clockwise");
+          myStepper.step(stepsPerRevolution);
+          delay(1000);
+        
+          // step one revolution in the other direction:
+          Serial.println("counterclockwise");
+          myStepper.step(-stepsPerRevolution);
+          delay(1000);
+        }
+        </code></pre>
+    <h4>Firebase + ESP32 + Stepper Motor</h4> 
+    <p>Finally, we tried to connect the the ESP32 and stepper motor to Firebase so that we could control the motor over Wifi. It worked! We'll likely build on this prototype over the next few weeks and incorporate it into the "machine building" assignment and ultimately our final project.</p>  
+    <div class="row">
+      <div class="col">
+        <video width="500" controls>
+          <source src="images/stepper_firebase.mp4" type="video/mp4">
+        </video>
+        <figcaption>TURN STEPPER MOTOR ON/OFF BY SETTING VALUE OF STRING TO "ON" OR "OFF" IN FIREBASE REALTIME DATABASE. NOTE THAT THE SYRINGE WASN'T DEPRESSED IN THIS VIDEO BECAUSE WE DIDN'T LINE THE GEARS UP PROPERLY.</figcaption>
+      </div>
+      <div class="col">
+        <video width="500" controls>
+          <source src="images/stepper_uiv2.mp4" type="video/mp4">
+        </video>
+        <figcaption>TURN STEPPER MOTOR ON/OFF BY CLICKING THE "TURN ON" OR "TURN OFF" BUTTON. THE SYRINGE DISPENSER WORKS!</figcaption>
+      </div>
+    </div> 
+    <br>
+    <h5>Arduino Code</h5>
+        <pre><code class="language-arduino hljs">
+          #include "WiFi.h"                                // esp32 library
+          #include "FirebaseESP32.h"                      // firebase library
+          #include "Stepper.h"
+          
+          
+          #define FIREBASE_HOST "https://ps70-week-9-default-rtdb.firebaseio.com/"  // the project name address from firebase id
+          #define FIREBASE_AUTH "2eCvifu0nm6sZbEiz8NMaCrHV9wRS21cMwPCOcDF"    
+          #define WIFI_SSID "MAKERSPACE"                                // input your home or public wifi name
+          #define WIFI_PASSWORD "12345678"                            // password of wifi ssid
+          
+          // ULN2003 Motor Driver Pins
+          #define IN1 19
+          #define IN2 18
+          #define IN3 10
+          #define IN4 4
+          
+          
+          String fireString = "";                                          received from firebase
+          const int stepsPerRevolution = 2048;  // change this to fit the number of steps per revolution
+          
+          // initialize the stepper library
+          Stepper myStepper(stepsPerRevolution, IN1, IN3, IN2, IN4);
+          
+          //Define FirebaseESP32 data object
+          FirebaseData firebaseData;
+          
+          void setup() {
+            // set the speed at 5 rpm
+            myStepper.setSpeed(15);
+            // initialize the serial port
+            Serial.begin(115200);
+            WiFi.begin(WIFI_SSID, WIFI_PASSWORD);                          // try to connect with wifi
+          
+            Serial.print("Connecting to ");
+            Serial.print(WIFI_SSID);
+            while (WiFi.status() != WL_CONNECTED) {
+              Serial.print(".");
+              delay(500);
+            }
+          
+            Serial.println();
+            Serial.print("Connected to ");
+            Serial.println(WIFI_SSID);
+            Serial.print("IP Address is : ");
+            Serial.println(WiFi.localIP());                                // print local IP address
+            Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);                  // connect to firebase
+            Firebase.reconnectWiFi(true);
+            Firebase.set(firebaseData, "/STEPPER", "OFF");              // set initial string of "OFF"
+          
+          }
+          
+          void loop() {
+          
+            Firebase.get(firebaseData, "/STEPPER");                     // get stepper status input from firebase
+            fireString = firebaseData.stringData();                        // change to e.g. intData() or boolData(
+          
+            if (fireString == "ON") {                    // compare the input of stepper status received from firebase
+              Serial.println("Stepper Turned ON");
+              myStepper.step(-stepsPerRevolution);              // make output stepper
+              }
+          
+            else if (fireString == "OFF") {              // compare the input of stepper status received from firebase
+              Serial.println("Stepper Turned OFF");
+              myStepper.step(0); 
+                }
+          
+          
+          }
+        </code></pre>
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
