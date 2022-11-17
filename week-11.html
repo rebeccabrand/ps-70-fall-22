@@ -108,25 +108,20 @@
               </div>
             </nav>
         <h2 class="mb-4">Week 11: Visual Programming & MVP</h2>
-        <p>This week's assignment was to create a minimum viable product (MVP) for our final project, making a serious attempt at one of the most challenging/intimidating aspects.
+        <p>This week's assignment was to create a minimum viable product (MVP) for our final project, making a serious attempt at one of its most challenging/intimidating aspects. 
+          Since our project will utilize some open source CNC drawing machine tutorials for the x- and y-axis movements, we decided that our MVP needed to address how the machine would deposit the 
+          painting materials into the water. There is no precedent for a mechanically operated suminagashi machine, so this will be our novel addition to the catalogue of computer-aided drawing projects.
         </p>
         <div class="row">
             <div class="col">
-                <h4>Testing Stepper Motors</h4>
-                <p>We started by playing with different stepper motors to understand how they work. Thinking it would be sufficient for our machine, we initially programmed the <a href="https://create.arduino.cc/projecthub/debanshudas23/getting-started-with-stepper-motor-28byj-48-3de8c9">28BYJ-48 stepper motor</a>
-                  to move back and forth. 
-                  <br>
-                  <br>
-                  However, we ended up finding a <a href="https://www.youtube.com/watch?v=XYqx5wg4oLU">tutorial for building a CNC drawing machine</a> that would become the inspirational framework for our project.
-                  Having initially thought we'd build a large frame similar to Suvin's machine, we found this person's approach to be much more agile and appropriate
-                  for our creative purposes. In this example, they use NEMA 17 bipolar stepper motors for more power.
+                <h4>Brushes</h4>
+                <p>We decided to first try the traditional method of suminagashi, which requires alternating using a brush with ink-surfectant-water solution and a brush with sufectant solution.
+                  We angled the brushes and created several rings in the water before using the rice paper to transfer the design to its permanent setting. This was a fun exercise
+                  because we hadn't actually tried this painting method yet! So we learned a lot about how to mix the solutions, position the brushes, time the brush movements, and other
+                  ways to keep the entire process in sync.
                 </p>
             </div>
-            <div class="col">
-              <img src="images/stepper.gif" height="300px", width="auto">
-            </div>
         </div>
-<<<<<<< HEAD
         <div class="row">
           <div class="col">
             <img src="images/paint_process.gif" height="250px" width="auto">
@@ -183,138 +178,6 @@
           Once these mechanics are ironed out, we will decide how to provide input data to the machine to influence how many rings
           the brushes make, how long the brushes stay in the water, and other potential decisions that will influence the printmaking process. Please
           refer to <a href="https://fellyliang.github.io/PS70/index.html">Felicia's website</a> for updates on the machine prototyping from week 11.
-=======
-        <h4>Building the Arm</h4>
-        <p>In order to get the x-axis arm working mechanically, we performed research and collected the requisite materials, including
-          toothed pulleys, timing belt, linear railing, a NEMA 17 motor, an A4988 driver and heat shield, and a 12V port and power source. 
-          Initially, we laser cut and 3D-printed linear railing parts, but ended up getting the metal piece in the mail on time. 
-          We also 3D-printed two base ends - one idle and one that will house the motor - as well as a raft mount for the y-axis.
-          Although we anticipate the raft mount dimensions changing, it was a helpful exercise in understanding how the mount will sit upon
-          and be powered by the first stepper motor.
->>>>>>> parent of 71cd142 (Week 11 updates)
-        </p>
-        <div class="row">
-          <div class="col">
-            <img src="images/materials.jpeg" height="300px" width="auto">
-            <figcaption>SOME 3D-PRINTED PARTS AND OTHER TOOLS.</figcaption>
-          </div>
-          <div class="col">
-              <img src="images/x-axis-mockup.gif" height="300px" width="auto">
-            <figcaption>MOVING THE TIMING BELT AND RAFT MOUNT MECHANICALLY.</figcaption>
-          </div>
-        </div>
-<<<<<<< HEAD
-      </div>
-
-=======
-        <br>
-        <div class="row">
-          <h4>Bipolar Stepper Motor Setup</h4> 
-           <p>
-            After constructing the arm and ensuring the system works without an outside power source, we set up the stepper motor circuit
-           to validate it would continue working if we programmed the motor to oscillate between clockwise and counterclockwise movements.
-           We also had to solder 12v power source plug to the power and ground wires that would plug into the breadboard.
-           </p>
-        </div>
-        <div class="row">
-           <div class="col">
-             <video height="300" width="auto" controls>
-               <source src="images/x-axis-motor.mp4" type="video/mp4">
-             </video>
-             <figcaption>STEPPER MOTOR MOVES CLOCKWISE, PAUSES, THEN MOVES COUNTERCLOCKWISE.</figcaption>
-           </div> 
-           <div class="col">
-            <img src="images/stepper_driver_schematic.jpg" height="300px" width="auto">
-            <figcaption>SCHEMATIC INCLUDING THE 12V POWER SOURCE, CAPACITOR, AND A4988 DRIVER.</figcaption>
-          </div>
-         </div> 
-        <br>
-        <div class="row">
-          <h4>Adding the Limit Switch</h4> 
-           <p>
-            Once we knew the motor moved the mount properly, we adapted different Arduino code snippets online to program the mount to travel clockwise,
-            trigger the limit switch, and then travel counterclockwise back to its origin. We soldered the limit switch to power and ground wires and affixed it to the right
-            edge of the mount, where it would hit the base and trigger the direction change.
-           </p>
-        </div>
-        <div class="row">
-          <div class="col">
-            <video height="250" width="auto" controls>
-              <source src="images/limit-switch.mp4" type="video/mp4">
-            </video>
-            <figcaption>STEPPER MOTOR ACCELERATES, HITS LIMIT SWITCH, PAUSES, AND CHANGES DIRECTION.</figcaption>
-          </div> 
-          <div class="col">
-           <img src="images/x-axis-arm.jpg" height="250px" width="auto">
-           <figcaption>X-AXIS ARM SYSTEM AND ELECTRONIC PARTS.</figcaption>
-         </div>
-        </div> 
-        <h5>Arduino Code</h5>
-        <pre><code class="language-arduino hljs">
-          #include <ezButton.h>
-            #include <AccelStepper.h>
-            
-            // Define pin connections
-            const int dirPin = 2;
-            const int stepPin = 3;
-            
-            // Define motor interface type
-            #define motorInterfaceType 1
-            
-            #define DIRECTION_CCW 1
-            #define DIRECTION_CW  -1
-            
-            
-            #define MAX_POSITION 0x7FFFFFFF // maximum of position we can set (long type)
-            
-            ezButton limitSwitch(7); // create ezButton object that attach to pin A0;
-            
-            AccelStepper stepper(motorInterfaceType, stepPin, dirPin);
-            
-            int direction  = DIRECTION_CW;
-            long targetPos = 0;
-            
-            void setup() {
-              Serial.begin(9600);
-            
-              limitSwitch.setDebounceTime(50); // set debounce time to 50 milliseconds
-            
-              stepper.setMaxSpeed(1000);   // set the maximum speed
-              stepper.setAcceleration(100); // set acceleration
-              stepper.setSpeed(300);         // set initial speed
-              stepper.setCurrentPosition(0); // set position
-            
-              targetPos = direction * MAX_POSITION;
-              stepper.moveTo(targetPos);
-            }
-            
-            void loop() {
-              limitSwitch.loop(); // MUST call the loop() function first
-            
-              if (limitSwitch.isPressed()) {
-                Serial.println(F("The limit switch: TOUCHED"));
-                direction *= -1; // change direction
-                Serial.print(F("The direction -> "));
-                if (direction == DIRECTION_CW)
-                  Serial.println(F("CLOCKWISE"));
-                else
-                  Serial.println(F("ANTI-CLOCKWISE"));
-            
-                targetPos = direction * MAX_POSITION;
-                stepper.setCurrentPosition(0); // set position
-                stepper.moveTo(targetPos);
-              }
-            
-              // without this part, the move will stop after reaching maximum position
-              if (stepper.distanceToGo() == 0) { // if motor moved to the maximum position
-                stepper.setCurrentPosition(0);   // reset position to 0
-                stepper.moveTo(targetPos);       // move the motor to maximum position again
-              }
-            
-              stepper.run(); // MUST be called in loop() function
-            }
-        </code></pre>
->>>>>>> parent of 71cd142 (Week 11 updates)
 </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
