@@ -108,6 +108,7 @@
               </div>
             </nav>
         <h2 class="mb-4">Week 11: Visual Programming & MVP</h2>
+        <h3>Testing the Ink</h3>
         <p>This week's assignment was to create a minimum viable product (MVP) for our final project, making a serious attempt at one of its most challenging/intimidating aspects. 
           Since our project will utilize some open source CNC drawing machine tutorials for the x- and y-axis movements, we decided that our MVP needed to address how the machine would deposit the 
           painting materials into the water. There is no precedent for a mechanically operated suminagashi machine, so this will be our novel addition to the catalogue of computer-aided drawing projects.
@@ -176,12 +177,51 @@
           <br>
           <br>
           Once these mechanics are ironed out, we will decide how to provide input data to the machine to influence how many rings
-          the brushes make, how long the brushes stay in the water, and other potential decisions that will influence the printmaking process. Please
-          refer to <a href="https://fellyliang.github.io/PS70/index.html">Felicia's website</a> for updates on the machine prototyping from week 11.
+          the brushes make, how long the brushes stay in the water, and other potential decisions that will influence the printmaking process.
           </p>
         <br>
+        </div> 
+     </div> 
+     <div class="row">
+      <div class="col">
         <img src="images/setup.jpeg" height="250px" width="auto">
-        </div>  
+      </div>
+      <div class="col">
+        <img src="images/paper.jpg" height="250px" width="auto">
+      </div>
+     </div>
+     <br>
+     <h3>Building the Y-Axis</h3>
+     <div class="row">
+      <div class="col">
+        <p>We started by prototyping the y-axis with just one brush holder. The brush is meant to be inserted into the triangular-shaped pen slider component at the front and secured using the orange finger dials. One timing belt will be connected directly to the pen holder (the larger main yellow component); the y-axis will be controlled using the stepper motor located in the raft mount (the middle green component). Another timing belt will be attached to the pen slider and controlled using a micro servo (located on the other end of the rod).
+
+          Since we were missing a few bearings and rods, we weren't able to complete the prototype. However, it was still very helpful to set this up as we realized we had to make a few adjustments such as:
+          <br>
+          <br>
+          - Shortening the rods to make the structure more secure
+          <br>
+          - Finding a better way to secure the linear rail to the two black base pieces: when the rod moved in the y-axis direction, the linear rail would rock back and forth, leading to unintentional changes in the z-height of the brush.</p>
+      </div>
+      <div class="col">
+        <img src="images/yaxis.png" height="400px" width="auto">
+      </div>
+     </div>
+     <br>
+     <h4>Remodeling the Pen Holder & Pen Slider</h3>
+      <div class="row">
+        <div class="col">
+          Since we need our machine to be able to hold two brushes, we started thinking about how we could incorporate this into the y-axis arm. We considered replacing the pen slider with a rotating part that could hold both brushes. We could control the rotation to dip one brush into the water bed at a time. However, we realized that this may be difficult to calibrate because the brush might move the ink as it moves in/out of the water, which wouldn't create the desired effect.
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col">
+          <img src="images/sketch1.jpg" height="300px" width="auto">
+          <img src="images/sketch2.jpg" height="300px" width="auto">
+        <img src="images/ypen_models.png" height="300px" width="auto" class="center">
+        </div>
+      </div>
 </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
