@@ -1,0 +1,79 @@
+<html class="no-js" lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ARIGETA</title>
+</head>
+
+<body style="background-color:#FFF9EB">
+    <div class="row">
+        <div class="col">
+            <img src="images/sumi-photo.png" height="auto" width="700">
+        </div>
+        <div class="col" style="padding:50px">
+            <br>
+            <div class="title">
+                <h1 align="left" style="color:#1E1E1E"><b>ARIGETA <br> A MACHINE AUGMENTED SUMINAGASHI EXPERIENCE</b></h1>
+            </div>
+            <div class="slider-container">
+                        <br>
+                        <h5 style="color:#1E1E1E">Adjust the slider! Your painting will loop <span id="number">1</span> times.*</h5>
+                        <input type="range" min="1" max="10" value="0" class="slider" id="myRange">
+                        <br>
+                        <br>
+                        <br>
+                        <p style="color:#1E1E1E">
+                        <b>Suminagashi</b> is often translated as "floating ink" in Japanese. It has been used for various crafts including paper, fabrics, metal, and ceramics. Using two brushes with pointy ends, with ink on one tip and water/surfactant solution on the other, they are alternately dipped in the tray filled with water. This creates irregular circles of color and space, which then morph or may be manipulated by blowing or fanning on the subsequent patterns or concentric circles. When ready, paper is then placed carefully on top of the water, peeled off, and the pattern is transferred to the paper. Paper is then left to dry on a rack or flat surface. (Met Museum)
+                        </p>
+                        <br>
+                        <p style="color:#1E1E1E">* Please wait until your painting has finished to edit the input number.
+                            <br>
+                            * Keep in mind that the machine runs slowly, so fewer loops is better!</p>
+                            <p style="color:#1E1E1E">With Love 💚 Rebecca Brand & Felicia Liang, PS70 Fall 2022</p>
+                        <img src="images/sadfrog.png" height="100px" width="auto">    
+            </div>
+        </div>
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+
+    <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyDQBLObhep8VYBAmCtOTewm_IIiHBeSlZY",
+        authDomain: "ps70-final-project-4e7f5.firebaseapp.com",
+        databaseURL: "https://ps70-final-project-4e7f5-default-rtdb.firebaseio.com",
+        projectId: "ps70-final-project-4e7f5",
+        storageBucket: "ps70-final-project-4e7f5.appspot.com",
+        messagingSenderId: "1035290940248",
+        appId: "1:1035290940248:web:4ef2eb22a22d6e78e5cb2d"
+    };
+        // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Get a database reference to our blog
+    var ref = firebase.database().ref("/");
+
+    // make the buttons call the function below 
+    document.getElementById('myRange').addEventListener('input', sliderUpdate, false);
+
+    function sliderUpdate()
+    {
+        console.log("Slider is sliding!");
+        ref.update({"LOOP_NUMBER": parseInt(this.value)});
+        output.innerHTML = this.value;
+    }
+
+    var output = document.getElementById("number");
+    output.innerHTML = slider.value;
+
+</script>
+
+</body>
