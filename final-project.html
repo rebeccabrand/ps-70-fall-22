@@ -107,7 +107,15 @@
                 </div>
               </div>
             </nav>
-        <h2>Final Project: Suminagashi Machine</h2>
+        <h2>Final Project: Arigeta Suminagashi Machine</h2>
+        <br>
+        <video align="center" width="800" controls>
+          <source src="images/FINAL_VIDEO_ARIGETA.mp4" type="video/mp4">
+        </video> 
+        <br>
+        <br>
+        <a href="final-project-firebase.html" class="btn btn-primary">Arigeta Web Interface 🚀</a>
+        <br>
         <br>
         <h4>Inspiration and Project Goal</h4>
         <div class="row">
@@ -143,7 +151,11 @@
               <li>Micro Servo Motors (2)</li>
               <li>Limit Switches (2)</li>
               <li>Arduino Uno & Wiring</li>
+              <li>ESP-32 Mini</li>
             </ul>
+          </div>
+          <div class="col">
+            <img src="images/material_flatlay.jpg" height="400px" width="auto">
           </div>
         </div>
         <h4>Tools & Techniques</h4>
@@ -151,13 +163,17 @@
           <div class="col">
             <uL>
               <li>3D Modeling & Printing</li>
-              <li>Microcontroller Programming</li>
+              <li>Microcontroller Programming (Arduino & ESP32)</li>
               <li>Electronic Inputs & Outputs</li>
-              <li>CNC Milling & Hand Tools</li>
+              <li>Wireless Networking (Firebase)</li>
+              <li>CNC Milling</li>
+              <li>Hand Tools</li>
+              <li>Vacuum Forming</li>
             </uL>
           </div>
         </div>
         <h4>Prototypes</h4>
+        <h5>General Experimentation</h5>
         <div class="row">
           <div class="col">
             <p>During the <a href="week-9.html">Week 9</a> & <a href="week-10.html">Week 10</a> assignments, we started assembling parts of the suminagashi machine. Feel free to view the assignments for those weeks for more process details!</p>
@@ -178,6 +194,7 @@
           </div>
         </div>
         <br>
+        <h5>Dispenser Method Experimentation</h5>
         <div class="row">
           <div class="col">
             <p>During <a href="week-11.html">Week 11</a> & Week 12, we tested the "analog" suminagashi process to better understand the mechanical needs and limitations. We also finished constructing the brush holder and the y-axis of the machine, writing Arduino C++ code to move both axes synchronously.
@@ -185,26 +202,142 @@
         </div>
         <div class="row">
           <div class="col">
-            <img src="images/paper.jpg" width="400px">
-            <figcaption>WEEK 11: PRACTICED THE INK DRAWING TECHNIQUE.</figcaption>
+            <img src="images/syringe_2.gif" width="400px">
           </div>
           <div class="col">
-            <video width="400" controls>
-              <source src="images/x-y-axes.mp4" type="video/mp4">
-            </video>
-            <figcaption>WEEK 12 & 13: FINISHED THE BRUSH HOLDER & Y AXIS.</figcaption>
+            <img src="images/paper.jpg" width="400px">
           </div>
         </div>
-  
-        <h4>Final Video</h4>
-        <video align="center" width="800" controls>
-          <source src="images/FINAL_VIDEO_ARIGETA.mp4" type="video/mp4">
-        </video> 
         <br>
+        <h5>3D Modeling and 3D Printing</h5>
+        <p>We also modelled and 3D printed the servo motor holder, brush slider and the brush holder (which controls the height of the brush) components of the machine.</p>
+        <div class="row">
+          <div class="col">
+            <img src="images/3models1.png" height="250px" width="auto">
+            <figcaption>SERVO MOTOR HOLDER, BRUSH SLIDER, BRUSH HOLDER</figcaption>
+          </div>
+          <div class="col">
+            <img src="images/3dmodels2.png" height="250px" width="auto">
+          </div>
+        </div>
         <br>
-        <h5>Please reference Felicia Liang's website for shared final project progress as of 12/12 (minus the video above).</h5>
+        <h5>Designing the Wood Base</h5>
+        <p>We decided to create a wooden base to secure the machine components and water basin, as well as house the electronics. To do so, we milled a 1/2" pocket cut of a 3/4" thick piece of plywood to fit the dimensions of the water basin and the electronics.</p>
+        <div class="row">
+          <div class="col">
+            <img src="images/CNC_process.jpg" height="300px">
+            <figcaption>CNC PROCESS</figcaption>
+          </div>
+          <div class="col">
+            <img src="images/CNC_result.jpg" height="300px">
+            <figcaption>CNC RESULT</figcaption>
+          </div>
+          <div class="col">
+            <img src="images/CNC_electronics.jpg" height="300px">
+            <figcaption>ELECTRONICS FIT PERFECTLY!</figcaption>
+          </div>
+        </div>
         <br>
-        <a href="final-project-firebase.html" class="btn btn-primary">Arigeta Web Interface 🚀</a>
+        <h5>Designing the Water Basin</h5>
+        <p>We experimented with vacuum forming and using acyrlic panels and weld solution to see which would would sturdier and water-tight. </p>
+        <div class="row">
+          <div class="col">
+            <img src="images/vaccuum_test1.jpg" height="400px">
+          </div>
+          <div class="col">
+            <img src="images/vaccuum_test2.jpg" height="400px">
+          </div>
+          <div class="col">
+            <img src="images/acrylic_test.jpg" height="400px">
+          </div>
+        </div>
+        <br>
+        <p>The vacuum formed container was a bit too flimsy so we decided to go with the acrylic box, which was water-tight after the weld dried. We used the mini acrylic box to help determine the height we wanted for the full sized one. We laser cutted two sheets of acrylic and bound them together using the acrylic weld. The box ended up fitting perfectly into the base that we milled out which was incredibly satisfying.</p>
+        <div class="row">
+          <div class="col">
+            <img src="images/test_brushheight.jpg" height="300px">
+          </div>
+          <div class="col">
+            <img src="images/acrylic_bigbox.jpg" height="300px">
+          </div>
+          <div class="col">
+            <img src="images/acrylic_inbase.jpg" height="300px">
+          </div>
+        </div>
+        <br>
+        <h5>Programming the Motors</h5>
+        <div class="row">
+          <div class="col">
+            <h6>X & Y Axes</h6>
+            <video width="450" controls>
+              <source src="images/x-y-axes.mp4" type="video/mp4">
+            </video>
+            <p>Building on the x-axis from a few weeks ago, we programmed the stepper motor for the y-axis . The rods tilted a bit when the y-axis moved, so we secured the linear rail more and shortened the rods.</p>
+          </div>
+          <div class="col">
+            <h6>Z Axis</h6>
+            <video width="450" controls>
+              <source src="images/z-axis.mp4" type="video/mp4">
+            </video>
+            <p>We also tested the z-axis - we put a micro servo into the servo holder at the back end of the y-axis. When the servo rotated, it would slide the brush holder up the brush slider.</p>
+          </div>
+        </div>
+        <h4>Putting It All Together</h4>
+        <p>
+          Now it was time get the x, y, and z axes to move together and dip ink into water! We used classes to keep the code organized and to not have to rely on delays. Here is the pseudo code:
+          <ol>
+            <li>When the machine turns on/resets, move the x-axis until the limit switch is pressed, then move the machine to the center of the linear rail.</li>
+            <li>After the x-axis is zeroed, move the y-axis until the limit switch is pressed, then move the rods until it is centered (i.e., the brush slider & holder are in the center of the water basin).</li>
+            <li>Dip the left brush (loaded with colored ink) into the water.</li>
+            <li>Move machine along the x-axis until the right brush is in the same position as where the left brush was previously.</li>
+            <li>Dip the right brush (loaded with surfactant only) into the water.</li>
+            <li>Move machine along the x-axis until it is back in its original position.</li>
+          </ol>
+          We also wanted to connect the machine to a web interface so that you would be able to control the number of times the brush dipped into the water. To do so, we set up a Firebase server and instead of using the Arduino Uno as we had did the whole time, we swapped it for an ESP32 so that the machine could interface directly with the Firebase app.
+        </p>
+        <h4>Meet Arigeta: A Machine-Augmented Suminagashi Experience</h4>
+        <div class="row">
+          <div class="col">
+            <img src="images/arigeta_web.jpg" height="300px">
+          </div>
+          <div class="col">
+            <video height="300" controls>
+              <source src="images/drip.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col">
+            <img src="images/test_machine.jpg" height="300px">
+          </div>
+          <div class="col">
+            <img src="images/test_paper.jpg" height="300px">
+          </div>
+        </div>
+        <br>
+        <h4>Bonus Content</h4>
+        <p>Did you really make a great project if you didn't have fun along the way? Here are some moments that amused us :)</p>
+        <div class="row">
+          <div class="col">
+            <img src="images/alligator.jpg" height="300px">
+            <figcaption>IN CASE YOU WERE WONDERING WHY THERE WAS A FROG ON OUR WEB INTERFACE...
+            </figcaption>
+          </div>
+          <div class="col">
+            <img src="images/sadfrog.png" height="300px">
+            <figcaption>I'LL JUST LEAVE THIS HERE.
+            </figcaption>
+          </div>
+          <div class="col">
+            <video height="300" controls>
+              <source src="images/jumpingservo.mp4" type="video/mp4">
+            </video>
+            <figcaption>A SERVO GONE ROGUE...</figcaption>
+          </div>
+        </div>
+
+
 </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
